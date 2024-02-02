@@ -185,7 +185,6 @@ class BluetoothConnection constructor(handler: Handler) : IBluetoothConnection {
 //        Log.e(TAG, "Connection Error");
         val msg = mHandler.obtainMessage(BluetoothConstants.MESSAGE_TOAST)
         val bundle = Bundle()
-        bundle.putInt(TOAST, R.string.fail_connect_bt)
         msg.data = bundle
         mHandler.sendMessage(msg)
         state = BluetoothConstants.STATE_FAILED
@@ -203,7 +202,6 @@ class BluetoothConnection constructor(handler: Handler) : IBluetoothConnection {
         // Send a failure message back to the Activity
         val msg = mHandler.obtainMessage(BluetoothConstants.MESSAGE_TOAST)
         val bundle = Bundle()
-        bundle.putInt(TOAST, R.string.lost_connection_bt)
         msg.data = bundle
         mHandler.sendMessage(msg)
         state = BluetoothConstants.STATE_NONE
